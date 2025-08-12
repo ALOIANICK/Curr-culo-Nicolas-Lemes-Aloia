@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nícolas Lemes Aloia — Currículo</title>
+  <meta name="description" content="Currículo online de Nicolas Lemes Aloia — Analista de Remuneração & People Analytics Jr. Power BI, Power Automate, Python, Dash, D3.js e automações em RH." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --card: #121826;
+      --muted: #9aa4b2;
+      --text: #e6edf6;
+      --primary: #4f46e5;
+      --accent: #22d3ee;
+      --pill: #1f2937;
+      --ok: #16a34a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif; color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, rgba(79,70,229,.25), transparent 60%),
+            radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.12), transparent 60%),
+            var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+    header.hero{
+      display:grid; grid-template-columns: 140px 1fr; gap:28px; align-items:center;
+      padding:28px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.06); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative; overflow:hidden;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:-2px; background: conic-gradient(from 180deg at 50% 50%, rgba(34,211,238,.2), rgba(79,70,229,.25), transparent 40%, transparent 100%);
+      filter:blur(24px); z-index:0; opacity:.5; pointer-events:none;
+      mask: radial-gradient(1100px 600px at 20% -10%, #000 20%, transparent 60%);
+    }
+    .avatar{position:relative; width:132px; height:132px; border-radius:50%; overflow:hidden; border:2px solid rgba(255,255,255,.2); box-shadow: var(--shadow); z-index:1}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+    .fallback{display:flex; align-items:center; justify-content:center; width:100%; height:100%; background:linear-gradient(135deg, #1f2937, #111827); font-family:Outfit, sans-serif; font-size:42px; letter-spacing:2px}
+    .headline h1{margin:0; font-family:Outfit, Inter, sans-serif; font-size:36px; line-height:1.15; letter-spacing:.3px}
+    .headline p{margin:10px 0 0; color:var(--muted)}
+    .chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .chip{background:linear-gradient(180deg, #0f172a, #0b1220); border:1px solid rgba(255,255,255,.06); padding:8px 12px; border-radius:999px; font-size:12px; color:#c8d3e0}
+    .actions{margin-top:14px; display:flex; gap:10px}
+    .btn{padding:10px 14px; font-weight:600; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:#1b2233; transition: transform .15s ease, box-shadow .2s ease, background .2s}
+    .btn.primary{background:linear-gradient(90deg, var(--primary), #7c3aed); border:none}
+    .btn:hover{transform: translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.25)}
+
+    /* Grid Sections */
+    .grid{display:grid; gap:20px; margin-top:26px}
+    @media (min-width: 980px){
+      .grid{grid-template-columns: 1.1fr .9fr}
+    }
+
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding:22px; box-shadow: var(--shadow)}
+    .card h2{margin:0 0 12px; font-family:Outfit, Inter, sans-serif; font-size:20px}
+    .muted{color:var(--muted)}
+    .list{display:flex; flex-direction:column; gap:14px}
+
+    /* Timeline */
+    .timeline{position:relative; padding-left:18px}
+    .timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(180deg, rgba(79,70,229,.6), rgba(34,211,238,.4))}
+    .t-item{position:relative; padding-left:16px}
+    .t-item::before{content:""; position:absolute; left:-2px; top:8px; width:12px; height:12px; background:linear-gradient(45deg, var(--primary), var(--accent)); border-radius:50%; box-shadow:0 0 0 3px rgba(79,70,229,.15)}
+    .t-title{font-weight:700}
+    .t-sub{font-size:13px; color:var(--muted)}
+
+    /* Skills */
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+    .skill{padding:10px 12px; border-radius:12px; background:#0f172a; border:1px solid rgba(255,255,255,.06); font-size:13px}
+
+    /* Project cards */
+    .proj-grid{display:grid; gap:14px}
+    @media(min-width:720px){.proj-grid{grid-template-columns: repeat(2, minmax(0,1fr))}}
+    .proj{position:relative; background:linear-gradient(180deg, #0e1626, #0a0f19); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:16px; overflow:hidden}
+    .proj h3{margin:0 0 6px; font-size:16px}
+    .proj p{margin:0; color:#b5bfd0; font-size:13px}
+    .badge{display:inline-block; margin-top:10px; font-size:11px; padding:6px 8px; border-radius:999px; background:rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.3); color:#9deafb}
+
+    /* Stats */
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
+    .stat{background:#0e1422; border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:14px; text-align:center}
+    .stat .n{font-size:26px; font-weight:800; font-family:Outfit, Inter, sans-serif}
+    .stat .k{font-size:12px; color:var(--muted)}
+
+    /* Footer */
+    footer{margin:28px 0 10px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* Print / PDF */
+    @media print{
+      body{background:#fff}
+      header.hero, .card, .stat{box-shadow:none}
+      .actions{display:none}
+    }
+
+
+    .languages {display:flex; flex-direction:column; gap:10px;}
+    .language-item {display:flex; align-items:center; gap:10px; font-size:14px;}
+    .language-item img {width:20px; height:14px; border-radius:2px; object-fit:cover;}
+    /* Simple scroll reveal */
+    [data-reveal]{opacity:0; transform:translateY(8px); transition: all .6s ease}
+    [data-reveal].visible{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero" data-reveal>
+      <div class="avatar" aria-label="Foto de perfil">
+        <!-- SUBSTITUA O SRC PELA SUA FOTO (URL pública ou caminho local). Ex.: src="./foto-nicolas.jpg" -->
+        <img id="photo" alt="Nicolas Lemes Aloia" src="https://drive.google.com/uc?export=view&id=1dpokWBemBPtaF8vsKrhYczuee6Cx8QmF" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1dpokWBemBPtaF8vsKrhYczuee6Cx8QmF&sz=w2048';" />
+      </div>
+      <div class="headline">
+        <h1>Nícolas Lemes Aloia</h1>
+        <p>Analista de Remuneração & People Analytics Jr — São Paulo, SP</p>
+        <div class="chip-row" aria-label="Principais competências">
+          <span class="chip">Power BI (DAX)</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip">Power Apps</span>
+          <span class="chip">Excel Avançado</span>
+          <span class="chip">Power Query</span>
+          <span class="chip">SharePoint</span>
+          <span class="chip">Python</span>
+          <span class="chip">Dashboards</span>
+          <span class="chip">Remuneração</span>
+          <span class="chip">People Analytics</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#contato">Entrar em contato</a>
+          <button class="btn" onclick="window.print()">Baixar PDF</button>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/nicolaslemesaloia">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid" style="margin-top:24px;">
+      <article class="card" data-reveal>
+        <h2>Sobre</h2>
+        <p class="muted">Analista de Remuneração e People Analytics Jr, com foco em automação de processos e tomada de decisão baseada em dados para diretoria. Experiência prática construindo organogramas interativos (Dash/Cytoscape e D3.js), modelos de incentivo de curto prazo, dashboards de remuneração, análise de horas extras, banco de horas, orçado Vs realizado para massa salarial e benefícios, tabela salarial e fluxos automatizados (Power Automate) integrando Microsoft Forms, SharePoint e e-mail, além de visualizações e aplicações web leves em Dash/Plotly.</p>
+      </article>
+
+      <aside class="card" data-reveal>
+        <h2>Contato</h2>
+        <div class="list">
+          <div><strong>E-mail:</strong> <span class="muted">(nikla2001@gmail.com)</span></div>
+          <div><strong>Telefone:</strong> <span class="muted">(+11 943523422)</span></div>
+          <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicolaslemesaloia">/in/nicolaslemesaloia</a></div>
+          <div><strong>Local:</strong> São Paulo — Brasil</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="card" data-reveal>
+        <h2>Experiência Atual</h2>
+        <div class="timeline list">
+          <div class="t-item">
+            <div class="t-title">Analista de Remuneração & People Analytics Jr</div>
+            <div class="t-sub">S.I.N.</div>
+            <ul class="muted" style="margin:6px 0 0 16px; line-height:1.6">
+              <li>Estruturei dashboards de remuneração e headcount em <strong>Power BI</strong> (DAX, modelagem e governança).</li>
+              <li>Criei <strong>organograma interativo</strong> (Dash/Cytoscape & D3.js) com filtros por diretoria, centro de custo e gestor.</li>
+              <li>Automatizei a distribuição de benefícios (Benefício: Ingressos Cinemark) com <strong>Power Automate</strong> + MS Forms + SharePoint (regras, limites e notificações).</li>
+              <li>Desenvolvi scripts em <strong>Python</strong> para extração e consolidação de <strong>PDFs</strong> organizando prontuarios de colaboradores automaticamente para o departamento pessoal.</li>
+              <li>Desenvolvi Chat BOT em <strong>Sistema Freshdesk</strong> para comunicação do RH com os colaboradores.</li>
+            </ul>
+          </div>
+          <!-- Adicione experiências anteriores aqui, se desejar -->
+        </div>
+      </article>
+
+      <aside class="card" data-reveal>
+        <h2>Principais Habilidades</h2>
+        <div class="skills">
+          <span class="skill">Power BI · DAX</span>
+          <span class="skill">Modelagem de Dados</span>
+          <span class="skill">Power Automate</span>
+          <span class="skill">Power Apps</span>
+          <span class="skill">SharePoint</span>
+          <span class="skill">Python · pandas</span>
+          <span class="skill">Excel</span>
+          <span class="skill">Dash · Plotly</span>
+          <span class="skill">Power Query</span>
+          <span class="skill">SQL básico</span>
+          <span class="skill">Sitema Apdata (Global Antares)</span>
+          <span class="skill">Sitema Elevo</span>
+          <span class="skill">Sitema SAP</span>
+          <span class="skill">Compensation</span>
+          <span class="skill">People Analytics</span>
+          <span class="skill">Disciplina</span>
+          <span class="skill">Organização</span>
+          <span class="skill">Criatividade</span>
+          <span class="skill">Proatividade</span>
+          <span class="skill">Autodidata</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card" data-reveal>
+      <h2>Projetos em Destaque</h2>
+      <div class="proj-grid">
+        <div class="proj">
+          <h3>Organograma Interativo</h3>
+          <p>Visualização hierárquica responsiva com filtros sincronizados (Diretoria, Centro de Custo, Gestor) e busca por nome, usando Dash/Cytoscape e D3.js.</p>
+          <span class="badge">Dash · Cytoscape · D3.js</span>
+        </div>
+        <div class="proj">
+          <h3>Automação de Benefícios</h3>
+          <p>Fluxo no Power Automate integrando Forms e SharePoint para controle de estoque, aprovações, limites mensais e disparo de e-mails personalizados.</p>
+          <span class="badge">Power Automate · SharePoint</span>
+        </div>
+        <div class="proj">
+          <h3>Automação de Documentos (Excel → PDF)</h3>
+          <p>Envio de documentos perssonalizada em massa para colaboparadores.</p>
+          <span class="badge">Python · VBA · Power Query</span>
+        </div>
+        <div class="proj">
+          <h3>Criação de Pesquisas para DHO e Educação Corporativa</h3>
+          <p>Criação de APP de LSI (Learning Style Inventory) para identificação de estilo de aprendizagem para todos os colaboradores usando calculos de inteligência e aprendizagem.</p>
+          <span class="badge">Power Apps · SharePoint</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" data-reveal>
+      <h2>Indicadores & Resultados</h2>
+      <div class="stats">
+        <div class="stat"><div class="n" contenteditable>65%</div><div class="k">redução de esforço manual</div></div>
+        <div class="stat"><div class="n" contenteditable>42 h/mês</div><div class="k">tempo economizado em rotinas (média colaborador)</div></div>
+        <div class="stat"><div class="n" contenteditable>+30</div><div class="k">processos automatizados</div></div>
+      </div>
+      
+    </section>
+
+    <section class="grid">
+      <aside class="card" data-reveal>
+        <h2>Formação</h2>
+        <ul class="list muted" style="margin-left:4px">
+          <li><strong>MBA, (Management: Foreing Trade and internacional Business)</strong> — Fundação Getulio Vargas (FGV) · 2025</li>
+          <li><strong>Bacharel, (Relações Internacionais)</strong> — Universidade Anhembi Morumbi (UAM) · 2022</li>
+          <li><strong>Colegial Tecnico, (Multimídia)</strong> — Fundação Escola de Comércio Álvares Penteado (FECAP) · 2018</li>
+          <li><strong>Certificações:</strong> Business Analytics - Indicadores e KPI's, Power Automate & Apps Essencial, Power BI: Data & Analytics Specialist</li>
+        </ul>
+      </aside>
+
+
+      <aside class="card" data-reveal>
+        <h2>Idiomas</h2>
+        <div class="languages">
+          <div class="language-item">
+            <img src="https://flagcdn.com/w20/br.png" alt="Brasil">
+            <span><strong>Português:</strong> Nativo</span>
+          </div>
+          <div class="language-item">
+            <img src="https://flagcdn.com/w20/us.png" alt="Estados Unidos">
+            <span><strong>Inglês:</strong> Proficiente</span>
+          </div>
+        </div>
+      </aside>
+
+
+      <aside class="card" data-reveal id="contato">
+        <h2>Disponibilidade</h2>
+        <p class="muted">Interessado em desafios de People Analytics, Remuneração e Automação de Processos em ambientes que valorizam dados, melhoria contínua e pessoas.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:nikla2001@gmail.com">Enviar e-mail</a>
+          <a class="btn" href="https://wa.me/5511943523422" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer>© <span id="year"></span> Nicolas Lemes Aloia — Currículo</footer>
+  </div>
+
+  <script>
+    // Reveal on scroll
+    const reveal = () => {
+      const els = document.querySelectorAll('[data-reveal]');
+      const vh = window.innerHeight;
+      els.forEach(el=>{ const r = el.getBoundingClientRect(); if(r.top < vh - 40) el.classList.add('visible'); });
+    };
+    addEventListener('scroll', reveal, {passive:true});
+    addEventListener('load', () => { reveal(); document.getElementById('year').textContent = new Date().getFullYear();
+      // Tente usar a foto pública do LinkedIn se você colocar a URL aqui (ou substitua manualmente no <img src>)
+      // Exemplo: document.getElementById('photo').src = 'https://media.licdn.com/dms/image/…';
+    });
+  </script>
+
+  <!-- SEO / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicolas Lemes Aloia",
+    "jobTitle": "Analista de Remuneração & People Analytics",
+    "address": {"@type":"PostalAddress","addressLocality":"São Paulo","addressCountry":"BR"},
+    "url": "https://www.linkedin.com/in/nicolaslemesaloia",
+    "knowsAbout": [
+      "Power BI","DAX","Power Automate","Power Apps","SharePoint",
+      "Python","pandas","Dash","Plotly","D3.js","Compensation","People Analytics"
+    ]
+  }
+  </script>
+</body>
+</html>
